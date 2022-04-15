@@ -8,9 +8,9 @@ export default function Navbar() {
                 <div className="container">
                     <div className="navbar">
                         <div className="logo">
-                            <a href='/'><img src="./logo.png" alt="Logo" /></a>
+                            <a href='/'><img src="./logo.png" alt="Logo" title="AirBnb"/></a>
                         </div>
-                        <div className="hamburger-menu" onClick={() => setIsNavOpen((prev) => !prev)}>
+                        <div className="hamburger-menu" title="Menu Bar" onClick={() => setIsNavOpen((prev) => !prev)}>
                             <span></span>
                             <span></span>
                             <span></span>
