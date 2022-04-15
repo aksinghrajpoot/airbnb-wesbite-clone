@@ -4,15 +4,32 @@ import Card from "./Components/Card"
 import Hero from "./Components/Hero"
 import Navbar from "./Components/Navbar"
 import Footer from "./Components/Footer"
+import React, { useEffect, useState } from "react";
 
-
-export default function App(){
+function Loading(){
     return <>
-    <Navbar/>
-    <Hero/>
-    <Card/>
-    <Footer/>
+    <div className="loading-screen">Loading...<div className="loading"></div></div>
     </>
 }
+
+export default function App() {
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, []);
+    return <>
+        {
+            loading ? <Loading/> :
+                <>
+                    <Navbar />
+                    <Hero />
+                    <Card />
+                    <Footer />
+                </>
+        }
+    </>;
+}
 const root = ReactDOM.createRoot(document.getElementById("root"))
-root.render(<App/>)
+root.render(<App />)
