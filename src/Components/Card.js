@@ -1,47 +1,25 @@
-import Data from "./CardData"
 
+export default function Card(props){
+    let badgeText ;
+    if (props.openSpots === 0){
+        badgeText = "Sold Out";
+    }else{
+        badgeText = "Online"
+    }
 
-export default function Card() {
-    return <>
-        <section>
-            <div className="card--items">
-
-                <Data
-                    img='katle.png'
-                    star={6}
-                    para='Life lesson from Karle Jefros'
-                    country='India'
-                    price={135}
-                />
-                <Data
-                    img='wedding.png'
-                    star={8}
-                    para='Stylish wedding ceremony in USA'
-                    country='USA'
-                    price={212}
-                />
-                <Data
-                    img='mountain.png'
-                    star={10}
-                    para='Cycling helps us being physically fit'
-                    country='Germany'
-                    price={203}
-                />
-                <Data
-                    img='swimming.png'
-                    star={9}
-                    para='Swimming contest held in Germany'
-                    country='Germany'
-                    price={176}
-                />
-                <Data
-                    img='yoga.png'
-                    star={4}
-                    para='Learn yoga lessons from indian trainers'
-                    country='Romania'
-                    price={154}
-                />
+    return ( 
+            <div className="card">
+                {badgeText && <div className="card--badge">{badgeText}</div> }
+                <img className="card--image" src={`../images/${props.img}`} alt="" />
+                <div className="card--stats">
+                    <img src="./star.png" alt="" className="card--star" />
+                    <span>{props.star}.0</span>
+                    <span className="gray">(10) • &nbsp; </span>
+                    <span className="gray"> {props.country}</span>
+                </div>
+                <p>{props.para}</p>
+                <p><span className="bold">From ${props.price} </span>/ person</p>
             </div>
-        </section>
-    </>
+    
+    )
 }

@@ -1,17 +1,18 @@
-export default function Data(props){
-    return (
-        
-            <div className="card">
-                <img className="card--image" src={`../images/${props.img}`} alt="" />
-                <div className="card--stats">
-                    <img src="./star.png" alt="" className="card--star" />
-                    <span>{props.star}.0</span>
-                    <span className="gray">(10) • &nbsp; </span>
-                    <span className="gray"> {props.country}</span>
-                </div>
-                <p>{props.para}</p>
-                <p><span className="bold">From ${props.price} </span>/ person</p>
-            </div>
+import MyData from "./MyData"
+import Data from "./Card"
+
+
+const MyElem = MyData.map(function(mapped){
+    return <Data  key={mapped.id}  img={mapped.img} star={mapped.star} para={mapped.para} country={mapped.country} price={mapped.price} openSpots={mapped.openSpots}/>
+})
+export default function Card() {
     
-    )
+    return <>
+        <section>
+            <div className="card--items">
+
+                {MyElem}
+            </div>
+        </section>
+    </>
 }

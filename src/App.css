@@ -76,7 +76,15 @@ section {
     max-width: 175px;
     font-size: 12px;
     margin: 15px;
+    position: relative;
 
+}
+.card--badge{
+    position: absolute;
+    padding: 2px 5px;
+    background-color: rgb(218, 67, 30);
+    color: white;
+    border-radius: 8px 0 0 0;
 }
 
 .card:nth-child(1) {
@@ -211,3 +219,4 @@ section {
       opacity: 0;
     }
   }
+
