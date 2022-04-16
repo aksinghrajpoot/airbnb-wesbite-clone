@@ -2,7 +2,7 @@ export default function Data(props){
     return (
         
             <div className="card">
-                <img className="card--image" src={props.img} alt="" />
+                <img className="card--image" src={`../images/${props.img}`} alt="" />
                 <div className="card--stats">
                     <img src="./star.png" alt="" className="card--star" />
                     <span>{props.star}.0</span>
