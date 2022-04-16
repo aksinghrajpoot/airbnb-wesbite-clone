@@ -1,4 +1,4 @@
-import MyData from "./MyData"
+import MyData from "../MyData"
 import Data from "./Card"
 
 
